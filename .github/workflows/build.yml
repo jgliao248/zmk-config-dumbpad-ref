@@ -35,7 +35,7 @@ jobs:
         run: west zephyr-export
       - name: West Build (dumbpad)
         run: west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: dubmpad Kconfig file
+      - name: dumbpad Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 dumbpad.uf2
